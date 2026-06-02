@@ -1,72 +1,10 @@
-# =============================================================
-#  requirements.txt — Python AI Dependencies
-#  Gesture Car Game — python_ai module
-# =============================================================
-#
-#  INSTALL COMMAND:
-#    pip install -r requirements.txt
-#
-#  RECOMMENDED PYTHON VERSION: 3.10 or 3.11
-#    (MediaPipe has limited support for Python 3.12+ as of 2024)
-#
-#  HOW TO CREATE A VIRTUAL ENVIRONMENT (best practice):
-#    python -m venv venv
-#    source venv/bin/activate        (Mac / Linux)
-#    venv\Scripts\activate           (Windows)
-#    pip install -r requirements.txt
-# =============================================================
-
-# ── Computer Vision ──────────────────────────────────────────
-# OpenCV: webcam capture, image drawing, display window
-opencv-python>=4.9.0
-
-# ── Hand Tracking AI ─────────────────────────────────────────
-# MediaPipe: Google's ML framework with pre-built Hand Landmarker
-# Provides 21 3D hand landmarks in real-time from webcam feed
-# Pin to 0.10.9 so the legacy mp.solutions API is available.
-mediapipe==0.10.9
-
-# ── Numerical Computing ──────────────────────────────────────
-# NumPy: used internally by OpenCV and MediaPipe for array ops
-# You don't call it directly, but it must be installed
-numpy>=1.26.0
-
-# =============================================================
-#  PACKAGE EXPLANATIONS:
-#
-#  opencv-python:
-#    - cv2.VideoCapture()  → opens your webcam
-#    - cv2.imshow()        → shows the debug window
-#    - cv2.putText()       → draws text on frames
-#    - cv2.flip()          → mirrors the frame like a webcam
-#
-#  mediapipe:
-#    - mp.solutions.hands  → hand landmark model
-#    - 21 landmarks per hand, each with x, y, z coordinates
-#    - Runs efficiently on CPU (no GPU required)
-#
-#  numpy:
-#    - Fast array math used under the hood by cv2 and mediapipe
-#    - Frames from cv2.read() are numpy arrays
-#
-# =============================================================
-#  TROUBLESHOOTING:
-#
-#  Problem: "No module named cv2"
-#  Fix:     pip install opencv-python
-#
-#  Problem: "No module named mediapipe"
-#  Fix:     pip install mediapipe
-#
-#  Problem: MediaPipe install fails on Python 3.12
-#  Fix:     Use Python 3.10 or 3.11
-#           python3.10 -m venv venv && source venv/bin/activate
-#
-#  Problem: Webcam not found
-#  Fix:     Change VideoCapture(0) → VideoCapture(1) in sender.py
-#
-#  Problem: Low FPS / lag
-#  Fix:     Lower webcam resolution in sender.py:
-#           cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
-#           cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
-# =============================================================
+opencv-python==4.8.1.78
+mediapipe==0.10.8
+numpy==1.24.4
+pyautogui==0.9.54
+pynput==1.7.6
+autopy==4.0.0
+screen-brightness-control==0.22.2
+comtypes==1.2.0
+protobuf==3.20.3
+matplotlib==3.7.2
